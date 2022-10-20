@@ -6,17 +6,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\ProductoController;    
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PedidosController;
 
 // Creando una ruta para listar clientes
 Route::get('/clientes', 
   [CustomerController::class, 'listar']
 );
-
-
-
-
-
-
 
 
 Route::get('/', function () {
@@ -33,4 +28,8 @@ Route::get('/usuarios2',
 
 Route::get('/productos', 
   [ProductoController::class, 'listar']
+);
+
+Route::get('/pedidos',
+  [PedidosController::class, 'listar']
 );
