@@ -2,34 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Llamamos a todos los controladores que usaremos
-use App\Http\Controllers\UsuariosController;
-use App\Http\Controllers\ProductoController;    
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\PedidosController;
-
-// Creando una ruta para listar clientes
-Route::get('/clientes', 
-  [CustomerController::class, 'listar']
-);
-
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/usuarios', function() {
-    return "Aqui van los usuariosxxxxxxx";
-});
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/usuarios2', 
-  [UsuariosController::class, 'listar']
-);
-
-Route::get('/productos', 
-  [ProductoController::class, 'listar']
-);
-
-Route::get('/pedidos',
-  [PedidosController::class, 'listar']
-);
+require __DIR__.'/auth.php';
