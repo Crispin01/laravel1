@@ -17,34 +17,19 @@
                             <th>Email</th>
                             <th>Acciones</th>
                         </tr>
+                        @foreach ($listado as $empleados)
                         <tr>
-                            <td>Alex</td>
-                            <td>Valera</td>
-                            <td>985413645</td>
-                            <td>Valer@gmail.com</td>
-                        </tr>
-                        <td>
+                            <td>{{ $empleados->firstName }}</td>
+                            <td>{{ $empleados->lastName }}</td>
+                            <td>{{ $empleados->employeeNumber }}</td>
+                            <td>{{ $empleados->email }}</td>
+                        
+                            <td>
                                 <a href="" class="btn btn-success">Editar</a>
                                 <a href="" class="btn btn-danger">Eliminar</a>
-                        </td>
-                        <tr>
-                            <td>Alex</td>
-                            <td>Valera</td>
-                            <td>985413645</td>
-                            <td>Valer@gmail.com</td>
+                            </td>
                         </tr>
-                        <tr>
-                            <td>Alex</td>
-                            <td>Valera</td>
-                            <td>985413645</td>
-                            <td>Valer@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Alex</td>
-                            <td>Valera</td>
-                            <td>985413645</td>
-                            <td>Valer@gmail.com</td>
-                        </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>

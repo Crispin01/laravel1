@@ -16,37 +16,21 @@
                             <th>Nombre</th>
                             <th>Apellidos</th>
                             <th>Telefono</th>
-                            <th>Email</th>
+                            <th>Ciudad</th>
                             <th>Acciones</th>
                         </tr>
+                        @foreach ($listado as $cliente)
                         <tr>
-                            <td>Alex</td>
-                            <td>Valera</td>
-                            <td>985413645</td>
-                            <td>Valer@gmail.com</td>
+                            <td>{{ $cliente->contactFirstName }}</td>
+                            <td>{{ $cliente->contactLastName }}</td>
+                            <td>{{ $cliente->phone }}</td>
+                            <td>{{ $cliente->city }}</td>
                             <td>
                                 <a href="" class="btn btn-success">Editar</a>
                                 <a href="" class="btn btn-danger">Eliminar</a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Alex</td>
-                            <td>Valera</td>
-                            <td>985413645</td>
-                            <td>Valer@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Alex</td>
-                            <td>Valera</td>
-                            <td>985413645</td>
-                            <td>Valer@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Alex</td>
-                            <td>Valera</td>
-                            <td>985413645</td>
-                            <td>Valer@gmail.com</td>
-                        </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +22,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/clientes', function () {
-    return view('clientes');
-})->middleware(['auth', 'verified'])->name('clientes');  
+Route::get('/clientes',[CustomerController::class, 'index'])->middleware(['auth', 'verified'])->name('clientes');  
 
+Route::get('/empleados',[CustomerController::class, 'index'])->middleware(['auth', 'verified'])->name('empleados');  
 
-Route::get('/empleados', function () {
-    return view('empleados');
-})->middleware(['auth', 'verified'])->name('empleados');
 
 Route::get('/ventas', function () {
     return view('ventas');

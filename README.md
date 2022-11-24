@@ -62,3 +62,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## LISTAR UNA TALBA DE BASE DE DATOS EN LARAVEL
+PARA LISTAR UNA TABLA TENEMOS DOS OPCIONES.
+La más fácil consiste en invocar a la clase DB y llamar a la tabla y la otra forma ( la correcta pero más compleja ) es primero crear un modelo de esa tabla y luego en el controlador, llamar al modelo sin necesidad de la clase DB.
+
+Una vez consumamos la tabla lo guardamos en una variable y lo enviamos a la vista para que con la función "@foreach" podamos listar los registros de aquella tabla.
